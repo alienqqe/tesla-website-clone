@@ -1,4 +1,7 @@
-import './globals.css'
+'use client'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { useEffect } from 'react'
+import './globals.scss'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -9,8 +12,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    require('bootstrap')
+  }, [])
+
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>{children}</body>
     </html>
   )
